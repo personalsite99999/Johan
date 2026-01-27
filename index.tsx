@@ -95,9 +95,16 @@ const Navbar = () => {
             <motion.img 
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              src="https://github.com/personalsite99999/Johan/blob/main/Logo.jpg?raw=true" 
+              src="https://raw.githubusercontent.com/personalsite99999/Johan/main/Logo2.png" 
               alt="Logo Johan" 
               className="w-10 h-10 rounded-full border border-cyber-cyan shadow-[0_0_15px_rgba(0,243,255,0.6)] object-cover bg-black"
+              onError={(e) => {
+                // Fallback jika file .png tidak ada (mungkin masih .jpg)
+                const target = e.target as HTMLImageElement;
+                if (!target.src.endsWith('.jpg')) {
+                   target.src = "https://raw.githubusercontent.com/personalsite99999/Johan/main/Logo2.jpg";
+                }
+              }}
             />
             <div className="flex-shrink-0 font-techno text-2xl font-bold text-cyber-cyan tracking-wider">
               JOHAN<span className="text-cyber-pink">.DEV</span>
