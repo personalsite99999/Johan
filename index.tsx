@@ -237,7 +237,25 @@ const About = () => {
                 Saya menguasai teknik dasar mulai dari OS Foxpro/Visual Basic hingga <strong className="text-cyber-green">Web Server Programming</strong> modern.
               </p>
               <p className="italic text-gray-500 border-l-4 border-cyber-cyan pl-4 py-2 bg-black/20">
-                "Jika ada yang tertarik untuk belajar dan mendalami pemrograman, saya akan membantu semaksimal mungkin."
+                
+                <div className="space-y-4">
+  <p className="italic text-gray-300 border-l-4 border-cyber-cyan pl-4 py-3 bg-black/40 shadow-lg">
+    <span className="block text-cyber-cyan font-bold not-italic mb-1">Architecture & Vision:</span>
+    "Jangan biarkan batasan sistem menghambat laju bisnis. Saya akan menganalisa dan merancang arsitektur program yang adaptif, memastikan Management System Anda memiliki Dashboard yang cerdas dan siap mendukung keputusan strategis perusahaan."
+  </p>
+</div>
+                <div className="space-y-4">
+  <p className="italic text-gray-300 border-l-4 border-cyber-cyan pl-4 py-3 bg-black/40 shadow-lg">
+    <span className="block text-cyber-cyan font-bold not-italic mb-1">Problem Solver:</span>
+    "Sistem Anda sudah mentok? Mari kita bedah. Saya memberikan analisa mendalam dan solusi kustom untuk membangun Dashboard Management yang tidak hanya fungsional, tapi juga mempermudah skalabilitas bisnis Anda ke level berikutnya."
+  </p>
+</div>
+                <div className="space-y-4">
+  <p className="italic text-gray-300 border-l-4 border-cyber-cyan pl-4 py-3 bg-black/40 shadow-lg">
+    <span className="block text-cyber-cyan font-bold not-italic mb-1">Future-Proof Growth:</span>
+    "Sistem kaku saatnya di-upgrade. Jika program saat ini sulit dikembangkan, saya siap membantu Anda bertransformasi. Mari bangun ekosistem dashboard yang intuitif untuk manajemen yang lebih rapi, efisien, dan siap menghadapi masa depan."
+  </p>
+</div>
               </p>
             </div>
           ) : (
