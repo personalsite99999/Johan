@@ -167,7 +167,7 @@ const Hero = () => {
         >
           <div className="w-32 h-32 mx-auto mb-8 rounded-full border-4 border-cyber-cyan shadow-[0_0_30px_rgba(0,243,255,0.5)] overflow-hidden">
              {/* Using the OG Image from the provided metadata */}
-             <img src="https://josanvin.github.io/josanvin/img/Logosaya.png" alt="Johan" className="w-full h-full object-cover" />
+             <img src="https://josanvin.github.io/josanvin/img/Fotoku.png" alt="Johan" className="w-full h-full object-cover" />
           </div>
           <h1 className="font-techno text-5xl md:text-7xl font-bold text-white mb-4 tracking-tighter text-glow">
             JOHAN
