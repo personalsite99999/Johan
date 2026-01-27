@@ -269,7 +269,24 @@ const About = () => {
                 I have mastered techniques ranging from legacy Foxpro/Visual Basic to modern <strong className="text-cyber-green">Web Server Programming</strong>.
               </p>
               <p className="italic text-gray-500 border-l-4 border-cyber-cyan pl-4 py-2 bg-black/20">
-                "If anyone is interested in learning and exploring programming, I will help as much as possible."
+                                <div className="space-y-4">
+  <p className="italic text-gray-300 border-l-4 border-cyber-cyan pl-4 py-3 bg-black/40 shadow-lg">
+    <span className="block text-cyber-cyan font-bold not-italic mb-1">Architecture & Vision:</span>
+    "Don't let system limitations hinder your business growth. I will analyze and design an adaptive program architecture, ensuring that your Management System has a smart Dashboard that is ready to support your company's strategic decisions."
+  </p>
+</div>
+                <div className="space-y-4">
+  <p className="italic text-gray-300 border-l-4 border-cyber-cyan pl-4 py-3 bg-black/40 shadow-lg">
+    <span className="block text-cyber-cyan font-bold not-italic mb-1">Problem Solver:</span>
+    "Is your system stuck? Let's take a closer look. I provide in-depth analysis and customized solutions to build a Management Dashboard that is not only functional, but also facilitates the scalability of your business to the next level."
+  </p>
+</div>
+                <div className="space-y-4">
+  <p className="italic text-gray-300 border-l-4 border-cyber-cyan pl-4 py-3 bg-black/40 shadow-lg">
+    <span className="block text-cyber-cyan font-bold not-italic mb-1">Future-Proof Growth:</span>
+    "It's time to upgrade your rigid system. If your current program is difficult to develop, I am ready to help you transform. Let's build an intuitive dashboard ecosystem for neater, more efficient management that is ready for the future."
+  </p>
+</div>
               </p>
             </div>
           )}
