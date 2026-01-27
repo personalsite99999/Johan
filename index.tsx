@@ -91,8 +91,17 @@ const Navbar = () => {
     <nav className="fixed w-full z-50 bg-cyber-dark/90 backdrop-blur-md border-b border-cyber-cyan/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0 font-techno text-2xl font-bold text-cyber-cyan tracking-wider">
-            JOHAN<span className="text-cyber-pink">.DEV</span>
+          <div className="flex items-center space-x-3">
+            <motion.img 
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              src="https://github.com/personalsite99999/Johan/blob/main/Logo.jpg?raw=true" 
+              alt="Logo Johan" 
+              className="w-10 h-10 rounded-full border border-cyber-cyan shadow-[0_0_15px_rgba(0,243,255,0.6)] object-cover bg-black"
+            />
+            <div className="flex-shrink-0 font-techno text-2xl font-bold text-cyber-cyan tracking-wider">
+              JOHAN<span className="text-cyber-pink">.DEV</span>
+            </div>
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
@@ -166,7 +175,6 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="w-32 h-32 mx-auto mb-8 rounded-full border-4 border-cyber-cyan shadow-[0_0_30px_rgba(0,243,255,0.5)] overflow-hidden">
-             {/* Using the OG Image from the provided metadata */}
              <img src="https://josanvin.github.io/josanvin/img/Fotoku.png" alt="Johan" className="w-full h-full object-cover" />
           </div>
           <h1 className="font-techno text-5xl md:text-7xl font-bold text-white mb-4 tracking-tighter text-glow">
@@ -375,7 +383,6 @@ const VideoShowcase = () => {
               transition={{ duration: 0.6 }}
               className="flex flex-col items-center"
             >
-              {/* TV FRAME HTML/CSS RECREATION */}
               <div className="w-full max-w-3xl">
                 <div className="tv-frame">
                   <div className="tv-screen">
@@ -412,7 +419,6 @@ const VideoShowcase = () => {
 const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-cyber-light to-black relative">
-       {/* Decorative Grid */}
        <div className="absolute inset-0 bg-[linear-gradient(rgba(188,19,254,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(188,19,254,0.05)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none"></div>
 
       <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
