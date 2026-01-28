@@ -151,28 +151,69 @@
 </script>
 </head>
   <body>
-    <!-- 🎵 BACKGROUND MUSIC -->
-    <audio id="bg-music" loop>
-      <source src="https://raw.githubusercontent.com/josanvin/josanvin/main/img/musikku.mp3" type="audio/mpeg">
-    </audio>
+      <!-- 🎵 BACKGROUND MUSIC -->
+  <audio id="bg-music" loop>
+    <source src="https://raw.githubusercontent.com/josanvin/josanvin/main/img/musikku.mp3" type="audio/mpeg">
+  </audio>
 
-    <!-- React Root -->
-    <div id="root"></div>
+  <!-- 🔊 Floating Button -->
+  <button id="musicToggle" class="music-btn">🔊 MUSIC</button>
 
-    <!-- React App -->
-    <script type="module" src="/index.tsx"></script>
+  <!-- React Root -->
+  <div id="root"></div>
 
-    <!-- 🎶 MUSIC CONTROLLER -->
-    <script>
-      const music = document.getElementById("bg-music");
+  <script type="module" src="/index.tsx"></script>
 
-      function playMusicOnce() {
-        music.volume = 0.4; // volume 40%
-        music.play().catch(() => {});
-        document.removeEventListener("click", playMusicOnce);
+  <!-- 🎶 NEXT LEVEL MUSIC ENGINE -->
+  <script>
+    const music = document.getElementById("bg-music");
+    const btn = document.getElementById("musicToggle");
+
+    let isPlaying = false;
+    let fadeInterval;
+
+    // Fade In Effect
+    function fadeInMusic() {
+      music.volume = 0;
+      music.play().catch(()=>{});
+      fadeInterval = setInterval(() => {
+        if (music.volume < 0.4) {
+          music.volume += 0.02;
+        } else {
+          clearInterval(fadeInterval);
+        }
+      }, 100);
+    }
+
+    // Play on first interaction
+    function firstInteraction() {
+      fadeInMusic();
+      isPlaying = true;
+      document.removeEventListener("click", firstInteraction);
+    }
+
+    document.addEventListener("click", firstInteraction, { once: true });
+
+    // Toggle Button
+    btn.addEventListener("click", () => {
+      if (isPlaying) {
+        music.pause();
+        btn.innerText = "🔇 MUTED";
+      } else {
+        music.play();
+        btn.innerText = "🔊 MUSIC";
       }
+      isPlaying = !isPlaying;
+    });
 
-      document.addEventListener("click", playMusicOnce);
-    </script>
+    // Auto pause when tab inactive
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        music.pause();
+      } else if (isPlaying) {
+        music.play().catch(()=>{});
+      }
+    });
+  </script>
   </body>
 </html>
