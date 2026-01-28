@@ -151,62 +151,69 @@
 </script>
 </head>
   <body>
-  <!-- 🎵 BACKGROUND MUSIC (HIDDEN) -->
-  <audio id="bg-music" loop preload="auto">
-    <source
-      src="https://raw.githubusercontent.com/josanvin/josanvin/main/img/musikku.mp3"
-      type="audio/mpeg"
-    />
-  </audio>
+<!-- 🎵 BACKGROUND MUSIC -->
+<audio id="bg-music" loop preload="auto">
+  <source
+    src="https://raw.githubusercontent.com/josanvin/josanvin/main/img/musikku.mp3"
+    type="audio/mpeg"
+  />
+</audio>
 
-  <!-- React Root -->
-  <div id="root"></div>
+<!-- (Konten web kamu / React / dll di sini) -->
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+    
+<!-- 🎶 MUSIC ENGINE -->
+<script>
+  const music = document.getElementById("bg-music");
 
-  <script type="module" src="/index.tsx"></script>
+  let hasStarted = false;
+  let fadeTimer = null;
 
-  <!-- 🎶 SCROLL-ACTIVATED MUSIC ENGINE -->
-  <script>
-    const music = document.getElementById("bg-music");
+  function fadeInMusic() {
+    if (hasStarted) return;
+    hasStarted = true;
 
-    let hasStarted = false;
-    let fadeInterval = null;
+    music.volume = 0;
 
-    // 🎚️ Smooth Fade In
-    function fadeInMusic() {
-      if (hasStarted) return;
-      hasStarted = true;
-
-      music.volume = 0;
-      music.play().catch(() => {});
-
-      fadeInterval = setInterval(() => {
+    music.play().then(() => {
+      fadeTimer = setInterval(() => {
         if (music.volume < 0.4) {
           music.volume += 0.02;
         } else {
           music.volume = 0.4;
-          clearInterval(fadeInterval);
+          clearInterval(fadeTimer);
         }
       }, 100);
-    }
-
-    // 🚀 Play on FIRST SCROLL (desktop + mobile)
-    function onFirstScroll() {
-      fadeInMusic();
-      window.removeEventListener("scroll", onFirstScroll);
-      window.removeEventListener("touchmove", onFirstScroll);
-    }
-
-    window.addEventListener("scroll", onFirstScroll, { passive: true });
-    window.addEventListener("touchmove", onFirstScroll, { passive: true });
-
-    // 🛑 Auto pause when tab not active
-    document.addEventListener("visibilitychange", () => {
-      if (document.hidden) {
-        music.pause();
-      } else if (hasStarted) {
-        music.play().catch(() => {});
-      }
+    }).catch(() => {
+      hasStarted = false;
     });
-  </script>
+  }
+
+  function userGestureStart() {
+    fadeInMusic();
+    removeListeners();
+  }
+
+  function removeListeners() {
+    window.removeEventListener("touchstart", userGestureStart);
+    window.removeEventListener("mousedown", userGestureStart);
+    window.removeEventListener("wheel", userGestureStart);
+  }
+
+  // ✅ Gesture yang diizinkan browser
+  window.addEventListener("touchstart", userGestureStart, { passive: true });
+  window.addEventListener("mousedown", userGestureStart);
+  window.addEventListener("wheel", userGestureStart, { passive: true });
+
+  // ⏸ Pause saat tab tidak aktif
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      music.pause();
+    } else if (hasStarted) {
+      music.play().catch(() => {});
+    }
+  });
+</script>
   </body>
 </html>
