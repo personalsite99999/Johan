@@ -140,7 +140,7 @@ const Navbar = () => {
 
 const Hero = () => {
   const [text, setText] = useState('');
-  const fullText = "SENIOR SOFTWARE ENGINEER";
+  const fullText = "Software Architect & Technology Consultant";
 
   useEffect(() => {
     let i = 0;
