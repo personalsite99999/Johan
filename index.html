@@ -151,67 +151,60 @@
 </script>
 </head>
   <body>
-      <!-- 🎵 BACKGROUND MUSIC -->
-  <audio id="bg-music" loop>
-    <source src="https://raw.githubusercontent.com/josanvin/josanvin/main/img/musikku.mp3" type="audio/mpeg">
+  <!-- 🎵 BACKGROUND MUSIC (HIDDEN) -->
+  <audio id="bg-music" loop preload="auto">
+    <source
+      src="https://raw.githubusercontent.com/josanvin/josanvin/main/img/musikku.mp3"
+      type="audio/mpeg"
+    />
   </audio>
-
-  <!-- 🔊 Floating Button -->
-  <button id="musicToggle" class="music-btn">🔊 MUSIC</button>
 
   <!-- React Root -->
   <div id="root"></div>
 
   <script type="module" src="/index.tsx"></script>
 
-  <!-- 🎶 NEXT LEVEL MUSIC ENGINE -->
+  <!-- 🎶 SCROLL-ACTIVATED MUSIC ENGINE -->
   <script>
     const music = document.getElementById("bg-music");
-    const btn = document.getElementById("musicToggle");
 
-    let isPlaying = false;
-    let fadeInterval;
+    let hasStarted = false;
+    let fadeInterval = null;
 
-    // Fade In Effect
+    // 🎚️ Smooth Fade In
     function fadeInMusic() {
+      if (hasStarted) return;
+      hasStarted = true;
+
       music.volume = 0;
-      music.play().catch(()=>{});
+      music.play().catch(() => {});
+
       fadeInterval = setInterval(() => {
         if (music.volume < 0.4) {
           music.volume += 0.02;
         } else {
+          music.volume = 0.4;
           clearInterval(fadeInterval);
         }
       }, 100);
     }
 
-    // Play on first interaction
-    function firstInteraction() {
+    // 🚀 Play on FIRST SCROLL (desktop + mobile)
+    function onFirstScroll() {
       fadeInMusic();
-      isPlaying = true;
-      document.removeEventListener("click", firstInteraction);
+      window.removeEventListener("scroll", onFirstScroll);
+      window.removeEventListener("touchmove", onFirstScroll);
     }
 
-    document.addEventListener("click", firstInteraction, { once: true });
+    window.addEventListener("scroll", onFirstScroll, { passive: true });
+    window.addEventListener("touchmove", onFirstScroll, { passive: true });
 
-    // Toggle Button
-    btn.addEventListener("click", () => {
-      if (isPlaying) {
-        music.pause();
-        btn.innerText = "🔇 MUTED";
-      } else {
-        music.play();
-        btn.innerText = "🔊 MUSIC";
-      }
-      isPlaying = !isPlaying;
-    });
-
-    // Auto pause when tab inactive
+    // 🛑 Auto pause when tab not active
     document.addEventListener("visibilitychange", () => {
       if (document.hidden) {
         music.pause();
-      } else if (isPlaying) {
-        music.play().catch(()=>{});
+      } else if (hasStarted) {
+        music.play().catch(() => {});
       }
     });
   </script>
