@@ -383,7 +383,7 @@ const Projects = () => {
         </div>
 
         <div className="mt-12 text-center">
-           <a href="https://restooon.vercel.app" target="_blank" className="text-cyber-cyan hover:underline mx-2 font-mono text-sm">Resto Online Demo</a>
+           <a href="https://restoon.vercel.app" target="_blank" className="text-cyber-cyan hover:underline mx-2 font-mono text-sm">Resto Online Demo</a>
            <span className="text-gray-600">|</span>
            <a href="https://diza-food.vercel.app" target="_blank" className="text-cyber-cyan hover:underline mx-2 font-mono text-sm">Diza-Food</a>
           <span className="text-gray-600">|</span>
