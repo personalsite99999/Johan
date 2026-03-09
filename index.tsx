@@ -108,7 +108,7 @@ const DEMOS = [
     href: 'https://ramadhan-games.vercel.app',
     subtitle: 'isi waktu luangmu sebelum berbuka puasa 5 Games Seru.',
     tag: 'Web Android',
-    logoText: 'RG'
+    logo: 'https://josanvin.github.io/josanvin/img/LogoGames2.png'
   },
   {
     title: 'Dhammapada',
