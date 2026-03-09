@@ -73,6 +73,34 @@ const PROJECTS_LIST = [
   "Sistem Reservasi Hotel Online"
 ];
 
+// --- Demo Links Data (improved) ---
+const DEMOS = [
+  {
+    title: 'Resto Online Demo',
+    href: 'https://restoon.vercel.app',
+    subtitle: 'Full-stack demo (menu, order & payment).',
+    tag: 'Demo Web'
+  },
+  {
+    title: 'Diza-Food',
+    href: 'https://diza-food.vercel.app',
+    subtitle: 'Food ordering & dashboard showcase.',
+    tag: 'UI / UX'
+  },
+  {
+    title: 'Dhammapada',
+    href: 'https://dhammapada-buddha.vercel.app',
+    subtitle: 'Static site & content delivery demo.',
+    tag: 'Content'
+  },
+  {
+    title: 'ABSENSI ONLINE',
+    href: 'https://absensi-dusky.vercel.app',
+    subtitle: 'Smart Attendance System (SAS) with Image + GPS Coordinates(Address)',
+    tag: 'Attendance System'
+  }
+];
+
 // --- Components ---
 
 const Navbar = () => {
@@ -361,6 +389,51 @@ const Services = () => {
   );
 };
 
+// --- NEW: Animated DemoLinks component ---
+const DemoLinks = () => {
+  return (
+    <div className="mt-12 text-center">
+      <p className="text-gray-400 text-sm mb-6 font-mono">Try these live demos — click to open in new tab</p>
+
+      <div className="flex flex-wrap justify-center gap-4">
+        {DEMOS.map((d, i) => (
+          <motion.a
+            key={d.href}
+            href={d.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.03 }}
+            transition={{ delay: i * 0.08, type: 'spring', stiffness: 120 }}
+            className="group relative w-72 p-4 rounded-xl border border-gray-800 bg-gradient-to-br from-black/30 to-gray-900/30 hover:from-cyber-cyan/6 hover:to-cyber-pink/6 transition-transform shadow-lg"
+          >
+            <div className="flex items-start justify-between">
+              <div className="text-left">
+                <h4 className="font-techno text-lg text-white">{d.title}</h4>
+                <p className="text-gray-400 text-sm mt-1">{d.subtitle}</p>
+              </div>
+              <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-cyber-cyan transition-colors" />
+            </div>
+
+            <div className="absolute -bottom-3 left-4">
+              <span className="inline-block px-2 py-0.5 text-xs bg-cyber-cyan text-black rounded-full font-mono">{d.tag}</span>
+            </div>
+
+            <motion.div
+              className="absolute inset-0 rounded-xl pointer-events-none"
+              initial={{ opacity: 0 }}
+              whileHover={{ opacity: 1 }}
+              transition={{ duration: 0.25 }}
+              style={{ boxShadow: '0 8px 30px rgba(0,243,255,0.06)' }}
+            />
+          </motion.a>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-cyber-light border-t border-cyber-pink/20">
@@ -382,13 +455,9 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-           <a href="https://restoon.vercel.app" target="_blank" className="text-cyber-cyan hover:underline mx-2 font-mono text-sm">Resto Online Demo</a>
-           <span className="text-gray-600">|</span>
-           <a href="https://diza-food.vercel.app" target="_blank" className="text-cyber-cyan hover:underline mx-2 font-mono text-sm">Diza-Food</a>
-          <span className="text-gray-600">|</span>
-           <a href="https://dhammapada-buddha.vercel.app" target="_blank" className="text-cyber-cyan hover:underline mx-2 font-mono text-sm">Dhammapada</a>
-        </div>
+        {/* REPLACED: Improved demo links with animation */}
+        <DemoLinks />
+
       </div>
     </section>
   );
@@ -480,6 +549,7 @@ const Contact = () => {
           whileTap={{ scale: 0.95 }}
           href="https://wa.me/6281341300100"
           target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center px-8 py-4 bg-cyber-green text-black font-bold text-lg rounded-full shadow-[0_0_20px_rgba(10,255,10,0.5)] hover:shadow-[0_0_30px_rgba(10,255,10,0.8)] transition-all animate-pulse-fast"
         >
           <Smartphone className="mr-2" />
