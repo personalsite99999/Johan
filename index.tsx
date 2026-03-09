@@ -76,6 +76,12 @@ const PROJECTS_LIST = [
 // --- Demo Links Data (improved) ---
 const DEMOS = [
   {
+    title: 'ABSENSI ONLINE',
+    href: 'https://absensi-dusky.vercel.app',
+    subtitle: 'Smart Attendance System (SAS) with Image + GPS Coordinates(Address)',
+    tag: 'Attendance System'
+  },
+  {
     title: 'Resto Online Demo',
     href: 'https://restoon.vercel.app',
     subtitle: 'Full-stack demo (menu, order & payment).',
@@ -92,12 +98,6 @@ const DEMOS = [
     href: 'https://dhammapada-buddha.vercel.app',
     subtitle: 'Static site & content delivery demo.',
     tag: 'Content'
-  },
-  {
-    title: 'ABSENSI ONLINE',
-    href: 'https://absensi-dusky.vercel.app',
-    subtitle: 'Smart Attendance System (SAS) with Image + GPS Coordinates(Address)',
-    tag: 'Attendance System'
   }
 ];
 
