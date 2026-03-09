@@ -79,25 +79,29 @@ const DEMOS = [
     title: 'ABSENSI ONLINE',
     href: 'https://absensi-dusky.vercel.app',
     subtitle: 'Smart Attendance System (SAS) with Image + GPS Coordinates(Address)',
-    tag: 'Attendance System'
+    tag: 'Attendance System',
+    logo: 'https://josanvin.github.io/josanvin/img/SAS.png'
   },
   {
     title: 'Resto Online Demo',
     href: 'https://restoon.vercel.app',
     subtitle: 'Full-stack demo (menu, order & payment).',
-    tag: 'Demo Web'
+    tag: 'Demo Web',
+    logo: 'https://josanvin.github.io/josanvin/img/logo-bagindo.png'
   },
   {
     title: 'Diza-Food',
     href: 'https://diza-food.vercel.app',
     subtitle: 'Food ordering & dashboard showcase.',
-    tag: 'UI / UX'
+    tag: 'UI / UX',
+    logoText: 'DF'
   },
   {
     title: 'Dhammapada',
     href: 'https://dhammapada-buddha.vercel.app',
     subtitle: 'Static site & content delivery demo.',
-    tag: 'Content'
+    tag: 'Content',
+    logo: 'https://josanvin.github.io/josanvin/img/buddha.jpg'
   }
 ];
 
@@ -408,11 +412,21 @@ const DemoLinks = () => {
             transition={{ delay: i * 0.08, type: 'spring', stiffness: 120 }}
             className="group relative w-72 p-4 rounded-xl border border-gray-800 bg-gradient-to-br from-black/30 to-gray-900/30 hover:from-cyber-cyan/6 hover:to-cyber-pink/6 transition-transform shadow-lg"
           >
-            <div className="flex items-start justify-between">
-              <div className="text-left">
-                <h4 className="font-techno text-lg text-white">{d.title}</h4>
-                <p className="text-gray-400 text-sm mt-1">{d.subtitle}</p>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                {/* Logo or Initials */}
+                {d.logo ? (
+                  <img src={d.logo} alt={d.title} className="w-12 h-12 rounded-md mr-4 object-cover border border-gray-700" />
+                ) : (
+                  <div className="w-12 h-12 rounded-full bg-cyber-cyan/6 mr-4 flex items-center justify-center text-cyber-cyan font-bold">{d.logoText}</div>
+                )}
+
+                <div className="text-left">
+                  <h4 className="font-techno text-lg text-white">{d.title}</h4>
+                  <p className="text-gray-400 text-sm mt-1">{d.subtitle}</p>
+                </div>
               </div>
+
               <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-cyber-cyan transition-colors" />
             </div>
 
