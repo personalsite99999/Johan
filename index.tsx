@@ -103,6 +103,13 @@ const DEMOS = [
     tag: 'Web Android',
     logoText: 'CT'
   },
+    {
+    title: 'Ramadhan-Games',
+    href: 'https://ramadhan-games.vercel.app',
+    subtitle: 'isi waktu luangmu sebelum berbuka puasa 5 Games Seru.',
+    tag: 'Web Android',
+    logoText: 'RG'
+  },
   {
     title: 'Dhammapada',
     href: 'https://dhammapada-buddha.vercel.app',
