@@ -78,7 +78,7 @@ const DEMOS = [
   {
     title: 'ABSENSI ONLINE',
     href: 'https://absensi-dusky.vercel.app',
-    subtitle: 'Smart Attendance System (SAS) with Image + GPS Coordinates(Address)',
+    subtitle: 'Smart Attendance System (SAS) with Image + GPS Coordinates(Address).',
     tag: 'Attendance System',
     logo: 'https://josanvin.github.io/josanvin/img/SAS.png'
   },
@@ -86,21 +86,21 @@ const DEMOS = [
     title: 'Resto Online Demo',
     href: 'https://restoon.vercel.app',
     subtitle: 'Full-stack demo (menu, order & payment).',
-    tag: 'Demo Web',
+    tag: 'Web Android',
     logo: 'https://josanvin.github.io/josanvin/img/logo-bagindo.png'
   },
   {
     title: 'Diza-Food',
     href: 'https://diza-food.vercel.app',
     subtitle: 'Food ordering & dashboard showcase.',
-    tag: 'UI / UX',
+    tag: 'Web Android',
     logoText: 'DF'
   },
   {
     title: 'Dhammapada',
     href: 'https://dhammapada-buddha.vercel.app',
-    subtitle: 'Static site & content delivery demo.',
-    tag: 'Content',
+    subtitle: 'Static website demo and Buddha content as requested by the customer.',
+    tag: 'Buddhist content(Customer Order)',
     logo: 'https://josanvin.github.io/josanvin/img/buddha.jpg'
   }
 ];
