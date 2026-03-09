@@ -97,6 +97,13 @@ const DEMOS = [
     logoText: 'DF'
   },
   {
+    title: 'CountThings',
+    href: 'https://count-things.vercel.app',
+    subtitle: 'AI-powered application designed to automatically count.',
+    tag: 'Web Android',
+    logoText: 'CT'
+  },
+  {
     title: 'Dhammapada',
     href: 'https://dhammapada-buddha.vercel.app',
     subtitle: 'Static website demo and Buddha content as requested by the customer.',
