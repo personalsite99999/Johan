@@ -103,7 +103,14 @@ const DEMOS = [
     tag: 'Web Android',
     logoText: 'CT'
   },
-    {
+  {
+    title: 'IndoScan-Pro',
+    href: 'https://translate-lake-nine.vercel.app',
+    subtitle: 'Translate tulisan di gambar ke bhs Indonesia.',
+    tag: 'Web Android',
+    logo: 'https://josanvin.github.io/josanvin/img/indoscan.png'
+  },
+   {
     title: 'Ramadhan-Games',
     href: 'https://ramadhan-games.vercel.app',
     subtitle: 'isi waktu luangmu sebelum berbuka puasa 5 Games Seru.',
