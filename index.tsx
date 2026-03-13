@@ -85,7 +85,7 @@ const DEMOS = [
   {
     title: 'Resto Online Demo',
     href: 'https://restoon.vercel.app',
-    subtitle: 'Full-stack demo (menu, order & payment).',
+    subtitle: 'Dine-in, Take-Away, Online (menu, order & payment).',
     tag: 'Web Android',
     logo: 'https://josanvin.github.io/josanvin/img/logo-bagindo.png'
   },
@@ -120,7 +120,7 @@ const DEMOS = [
   {
     title: 'Dhammapada',
     href: 'https://dhammapada-buddha.vercel.app',
-    subtitle: 'Static website demo and Buddha content as requested by the customer.',
+    subtitle: 'website and Buddha content as requested by the customer.',
     tag: 'Buddhist content(Customer Order)',
     logo: 'https://josanvin.github.io/josanvin/img/buddha.jpg'
   }
