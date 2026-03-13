@@ -179,12 +179,12 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Brand + Visitor counter */}
         {/* Brand + Visitor counter (responsive: vertical di mobile, horizontal di desktop) */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
-          <div className="flex-shrink-0 font-techno text-2xl font-bold text-cyber-cyan tracking-wider">
-            <span className="inline-flex items-baseline">
-              JOHAN<span className="text-cyber-pink ml-1">.DEV</span>
-            </span>
-          </div>
+          <div className="flex items-center gap-4">
+            <div className="flex-shrink-0 font-techno text-2xl font-bold text-cyber-cyan tracking-wider">
+              <span className="inline-flex items-baseline">
+                JOHAN<span className="text-cyber-pink ml-1">.DEV</span>
+              </span>
+            </div>
         
           {/* Visitors: selalu tampil, tapi tertata rapi pada layar kecil */}
           <div className="flex flex-col items-end sm:items-center sm:ml-4 min-w-[56px]">
