@@ -130,6 +130,38 @@ const DEMOS = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  
+  // visitor counter state
+  const [visitorCount, setVisitorCount] = useState<number | null>(null);
+
+  useEffect(() => {
+    let mounted = true;
+    const incrementVisitor = async () => {
+      try {
+        // Ganti URL ini bila Anda mau pakai layanan lain.
+        const COUNTER_API_URL = 'https://api.counterapi.dev/v1/countthings-app-v2/visitor/up';
+
+        const resp = await fetch(COUNTER_API_URL, { method: 'GET' });
+        const data = await resp.json();
+        // handle possible response shapes (count / value)
+        const countVal = typeof data?.count === 'number' ? data.count
+                        : typeof data?.value === 'number' ? data.value
+                        : null;
+        if (mounted) {
+          setVisitorCount(countVal);
+        }
+      } catch (err) {
+        console.error("Visitor counter error:", err);
+        if (mounted) setVisitorCount(null);
+      }
+    };
+
+    // only run on client mount
+    incrementVisitor();
+
+    return () => { mounted = false; };
+  }, []);
+
 
   const links = [
     { name: 'Home', href: '#home' },
@@ -144,8 +176,23 @@ const Navbar = () => {
     <nav className="fixed w-full z-50 bg-cyber-dark/90 backdrop-blur-md border-b border-cyber-cyan/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0 font-techno text-2xl font-bold text-cyber-cyan tracking-wider">
-            JOHAN<span className="text-cyber-pink">.DEV</span>
+          {/* Brand + Visitor counter */}
+          <div className="flex items-center gap-4">
+            <div className="flex-shrink-0 font-techno text-2xl font-bold text-cyber-cyan tracking-wider">
+              <span className="inline-flex items-baseline">
+                JOHAN<span className="text-cyber-pink ml-1">.DEV</span>
+              </span>
+            </div>
+
+            {/* Visitors box - sembunyikan di layar sangat kecil */}
+            <div className="hidden sm:flex flex-col items-end">
+              <span className="text-[8px] font-bold text-cyber-cyan uppercase tracking-widest">Visitors</span>
+              <div className="flex items-center gap-1">
+                <span className="text-[10px] font-bold text-cyber-cyan font-mono">
+                  {visitorCount !== null ? visitorCount.toLocaleString() : '...'}
+                </span>
+              </div>
+            </div>
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
