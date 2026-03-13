@@ -140,7 +140,7 @@ const Navbar: React.FC = () => {
     const incrementVisitor = async () => {
       try {
         // Ganti URL ini bila Anda mau pakai layanan lain.
-        const COUNTER_API_URL = 'https://api.counterapi.dev/v1/countthings-app-v2/visitor/up';
+        const COUNTER_API_URL = 'https://api.counterapi.dev/v1/johan-999-app-v2/visitor/up';
 
         const resp = await fetch(COUNTER_API_URL, { method: 'GET' });
         const data = await resp.json();
