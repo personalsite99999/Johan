@@ -135,36 +135,33 @@ const Navbar: React.FC = () => {
   // visitor counter state
   const [visitorCount, setVisitorCount] = useState<number | null>(null);
 
-useEffect(() => {
-  let mounted = true;
+  useEffect(() => {
+    let mounted = true;
+    const incrementVisitor = async () => {
+      try {
+        // Ganti URL ini bila Anda mau pakai layanan lain.
+        const COUNTER_API_URL = 'https://api.counterapi.dev/v1/countthings-app-v2/visitor/up';
 
-  const incrementVisitor = async () => {
-    try {
-      // CountAPI yang mengikat ke domain Anda.
-      // Endpoint ini otomatis menambah 1 setiap kali diakses:
-      // https://api.countapi.xyz/hit/{namespace}/{key}
-      // Saya pakai namespace = domain Anda, key = "visitors"
-      const COUNTER_API_URL = 'https://api.countapi.xyz/hit/johan-999.vercel.app/visitors';
-
-      const resp = await fetch(COUNTER_API_URL, { method: 'GET' });
-      const data = await resp.json();
-      // CountAPI mengembalikan field `value` dengan jumlah saat ini
-      const countVal = typeof data?.value === 'number' ? data.value : null;
-
-      if (mounted) {
-        setVisitorCount(countVal);
+        const resp = await fetch(COUNTER_API_URL, { method: 'GET' });
+        const data = await resp.json();
+        // handle possible response shapes (count / value)
+        const countVal = typeof data?.count === 'number' ? data.count
+                        : typeof data?.value === 'number' ? data.value
+                        : null;
+        if (mounted) {
+          setVisitorCount(countVal);
+        }
+      } catch (err) {
+        console.error("Visitor counter error:", err);
+        if (mounted) setVisitorCount(null);
       }
-    } catch (err) {
-      console.error("Visitor counter error:", err);
-      if (mounted) setVisitorCount(null);
-    }
-  };
+    };
 
-  // hanya jalankan di client saat komponen mount
-  incrementVisitor();
+    // only run on client mount
+    incrementVisitor();
 
-  return () => { mounted = false; };
-}, []);
+    return () => { mounted = false; };
+  }, []);
 
 
   const links = [
