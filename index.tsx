@@ -101,7 +101,7 @@ const DEMOS = [
     href: 'https://count-things.vercel.app',
     subtitle: 'AI-powered application designed to automatically count.',
     tag: 'Web Android',
-    logoText: 'CT'
+    logo: 'https://josanvin.github.io/josanvin/img/countthings.png'
   },
   {
     title: 'IndoScan-Pro',
