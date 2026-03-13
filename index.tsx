@@ -178,23 +178,26 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Brand + Visitor counter */}
-          <div className="flex items-center gap-4">
-            <div className="flex-shrink-0 font-techno text-2xl font-bold text-cyber-cyan tracking-wider">
-              <span className="inline-flex items-baseline">
-                JOHAN<span className="text-cyber-pink ml-1">.DEV</span>
+        {/* Brand + Visitor counter (responsive: vertical di mobile, horizontal di desktop) */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
+          <div className="flex-shrink-0 font-techno text-2xl font-bold text-cyber-cyan tracking-wider">
+            <span className="inline-flex items-baseline">
+              JOHAN<span className="text-cyber-pink ml-1">.DEV</span>
+            </span>
+          </div>
+        
+          {/* Visitors: selalu tampil, tapi tertata rapi pada layar kecil */}
+          <div className="flex flex-col items-end sm:items-center sm:ml-4 min-w-[56px]">
+            <span className="text-[8px] font-black text-white/30 uppercase tracking-widest">Visitors</span>
+            <div className="flex items-center gap-1">
+              <span className="text-[10px] font-bold text-cyber-cyan font-mono">
+                {visitorCount !== null ? visitorCount.toLocaleString() : '...'}
               </span>
             </div>
-
-            {/* Visitors box - sembunyikan di layar sangat kecil */}
-            <div className="hidden sm:flex flex-col items-end">
-              <span className="text-[8px] font-bold text-cyber-cyan uppercase tracking-widest">Visitors</span>
-              <div className="flex items-center gap-1">
-                <span className="text-[10px] font-bold text-cyber-cyan font-mono">
-                  {visitorCount !== null ? visitorCount.toLocaleString() : '...'}
-                </span>
-              </div>
-            </div>
           </div>
+        </div>
+
+          
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {links.map((link) => (
