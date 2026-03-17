@@ -110,6 +110,13 @@ const DEMOS = [
     tag: 'Web Android',
     logo: 'https://josanvin.github.io/josanvin/img/indoscan.png'
   },
+  {
+    title: 'Toko-Furniture',
+    href: 'https://toko-indra.vercel.app',
+    subtitle: 'Furniture Terbagus dan Terbaik.',
+    tag: 'Web Android',
+    logo: 'https://jambijohan0-cpu.github.io/Johan/img/logoindra1.jpeg'
+  },
    {
     title: 'Ramadhan-Games',
     href: 'https://ramadhan-games.vercel.app',
