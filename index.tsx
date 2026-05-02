@@ -562,41 +562,51 @@ const VideoShowcase = () => {
       <div className="max-w-5xl mx-auto px-4">
         <div className="text-center mb-16">
           <p className="text-cyber-cyan font-mono mb-2">// VISUAL PROOF</p>
-          <h2 className="text-4xl font-techno text-white text-glow">LATEST WORKS DEMO</h2>
+          <h2 className="text-4xl font-techno text-white text-glow uppercase">Latest Works Demo</h2>
         </div>
 
         <div className="space-y-24">
-          {VIDEOS.map((video, index) => (
+          {VIDEOS.map((video) => (
             <motion.div 
               key={video.id}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="flex flex-col items-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex flex-col items-center w-full"
             >
-              {/* TV FRAME HTML/CSS RECREATION */}
-              <div className="w-full max-w-3xl">
-                <div className="tv-frame">
-                  <div className="tv-screen">
+              {/* CONTAINER UTAMA - Memastikan responsivitas di Mobile */}
+              <div className="w-full max-w-4xl px-2">
+                {/* TV/Monitor Frame Wrapper */}
+                <div className="relative bg-gray-900 rounded-xl p-2 md:p-4 border border-white/10 shadow-2xl overflow-hidden">
+                  
+                  {/* ASPEC RATIO WRAPPER (16:9) */}
+                  <div className="relative w-full aspect-video bg-black rounded-lg overflow-hidden">
                     <iframe 
-                      src={`${video.url}`} 
-                      allow="autoplay; encrypted-media" 
+                      src={video.url}
+                      className="absolute top-0 left-0 w-full h-full border-0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                       allowFullScreen
                       title={video.title}
+                      loading="lazy"
                     ></iframe>
                   </div>
+
                 </div>
-                <div className="tv-stand"></div>
+                {/* TV STAND (Opsional) */}
+                <div className="hidden md:block w-32 h-3 bg-gray-800 mx-auto rounded-b-xl border-x border-b border-white/10"></div>
               </div>
 
-              <div className="mt-8 text-center max-w-2xl">
-                <h3 className="text-2xl font-bold text-white mb-3 font-techno">{video.title}</h3>
-                <div className="flex justify-center gap-2 mb-4">
+              {/* DETAIL INFO */}
+              <div className="mt-8 text-center max-w-2xl px-4">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-3 font-techno">{video.title}</h3>
+                <div className="flex flex-wrap justify-center gap-2 mb-4">
                   {video.tags.map(tag => (
-                     <span key={tag} className="text-xs bg-gray-800 text-cyber-cyan px-2 py-1 rounded border border-gray-700 font-mono">{tag}</span>
+                    <span key={tag} className="text-[10px] md:text-xs bg-cyber-cyan/10 text-cyber-cyan px-2 py-1 rounded border border-cyber-cyan/20 font-mono">
+                      #{tag}
+                    </span>
                   ))}
                 </div>
-                <p className="text-gray-400 leading-relaxed bg-cyber-light/50 p-4 rounded-lg border border-gray-800">
+                <p className="text-gray-400 text-sm md:text-base leading-relaxed bg-black/40 p-5 rounded-xl border border-gray-800 shadow-inner">
                   {video.desc}
                 </p>
               </div>
