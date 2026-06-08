@@ -111,6 +111,13 @@ const DEMOS = [
     logo: 'https://josanvin.github.io/josanvin/img/indoscan.png'
   },
   {
+    title: 'Arah-Antena-TV-Digital',
+    href: 'https://arah-antenatvdigital.vercel.app/',
+    subtitle: 'Menentukan Arah Panah Antena TV Digital agar sesuai dengan Pemancar Terdekat',
+    tag: 'Web Android',
+    logo: 'https://josanvin.github.io/josanvin/img/ArahSinyal2.png'
+  },
+  {
     title: 'Toko-Furniture',
     href: 'https://toko-indra.vercel.app',
     subtitle: 'Furniture Terbagus dan Terbaik.',
