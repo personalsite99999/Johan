@@ -125,6 +125,13 @@ const DEMOS = [
     logo: 'https://josanvin.github.io/josanvin/img/ArahSinyal2.png'
   },
   {
+    title: 'FIFA WORLD CUP 2026',
+    href: 'https://world-cup2026-lac.vercel.app/',
+    subtitle: 'Live Score Piala Dunia (FIFA WORLD CUP 2026).',
+    tag: 'Cloning Web',
+    logo: 'https://josanvin.github.io/josanvin/img/WorldCup2026.png'
+  },
+  {
     title: 'Toko-Furniture',
     href: 'https://toko-indra.vercel.app',
     subtitle: 'Furniture Terbagus dan Terbaik.',
