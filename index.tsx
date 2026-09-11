@@ -82,6 +82,12 @@ const DEMOS = [
     tag: 'Attendance System',
     logo: 'https://josanvin.github.io/josanvin/img/SAS.png'
   },
+  { title: 'Johan-Fit', 
+   href: 'https://drive.google.com/file/d/12Y-GpanRBH64OfLO6brKwHWEg7hqby1J/view?usp=sharing', 
+   subtitle: 'Aplikasi Jogging Gratis untuk Hitung Jarak, Langkah, Kalori, Kecepatan, Waktu & Pace.', 
+   tag: 'Android APK', 
+   logo: 'https://jambijohan0-cpu.github.io/Johan/img/Johan-Fit.png' 
+  },
   {
     title: 'Bongkar-Password Excel',
     href: 'https://bongkar-excel.vercel.app',
