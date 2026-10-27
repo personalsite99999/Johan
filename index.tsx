@@ -91,7 +91,7 @@ const DEMOS = [
   {
     title: 'J-Air — Cuaca & Kualitas Udara Dunia',
     href: 'https://johan-air.vercel.app/',
-    subtitle: '🌍 Mau tahu cuaca dan kondisi udara di berbagai kota di dunia? Gas cek lewat J-Air! 🌤️ Pantau suhu, kelembapan, angin, dan kualitas udara, biar aktivitas makin nyaman, perjalanan makin mantap, dan kesehatan tetap terjaga. Praktis, informatif, langsung dari browser tanpa ribet install aplikasi!',
+    subtitle: '🌍 Mau tahu 🌤️ cuaca dan kondisi udara di berbagai kota di dunia? Gas cek lewat J-Air!',
     tag: 'Web Android',
     logo: 'https://jambijohan0-cpu.github.io/Johan/img/Johan-Air.jpg'
   },
