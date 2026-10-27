@@ -89,6 +89,13 @@ const DEMOS = [
    logo: 'https://jambijohan0-cpu.github.io/Johan/img/Johan-Fit.png' 
   },
   {
+    title: 'J-Air — Cuaca & Kualitas Udara Dunia',
+    href: 'https://johan-air.vercel.app/',
+    subtitle: '🌍 Mau tahu cuaca dan kondisi udara di berbagai kota di dunia? Gas cek lewat J-Air! 🌤️ Pantau suhu, kelembapan, angin, dan kualitas udara, biar aktivitas makin nyaman, perjalanan makin mantap, dan kesehatan tetap terjaga. Praktis, informatif, langsung dari browser tanpa ribet install aplikasi!',
+    tag: 'Web Android',
+    logo: 'https://jambijohan0-cpu.github.io/Johan/img/Johan-Air.jpg'
+  },
+  {
     title: 'Bongkar-Password Excel',
     href: 'https://bongkar-excel.vercel.app',
     subtitle: 'Gak usah pusing nyari password sheet Excel yang ke-lock, tinggal upload langsung beres gratis! No install, 100% aman dan cepat!',
