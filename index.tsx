@@ -89,7 +89,7 @@ const DEMOS = [
    logo: 'https://jambijohan0-cpu.github.io/Johan/img/Johan-Fit.png' 
   },
   {
-    title: 'J-Air — Cuaca & Kualitas Udara Dunia',
+    title: 'J-Air : Cuaca & Kualitas Udara Dunia',
     href: 'https://johan-air.vercel.app/',
     subtitle: '🌍 Mau tahu 🌤️ cuaca dan kondisi udara di berbagai kota di dunia? Gas cek lewat J-Air!',
     tag: 'Web Android',
