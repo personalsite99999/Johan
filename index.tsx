@@ -82,18 +82,25 @@ const DEMOS = [
     tag: 'Attendance System',
     logo: 'https://josanvin.github.io/josanvin/img/SAS.png'
   },
-  { title: 'Johan-Fit', 
-   href: 'https://drive.google.com/file/d/12Y-GpanRBH64OfLO6brKwHWEg7hqby1J/view?usp=sharing', 
-   subtitle: 'Aplikasi Jogging Gratis untuk Hitung Jarak, Langkah, Kalori, Kecepatan, Waktu & Pace.', 
-   tag: 'Android APK', 
-   logo: 'https://jambijohan0-cpu.github.io/Johan/img/Johan-Fit.png' 
-  },
+  {
+    title: 'J-Music : Neon Music Hub',
+    href: 'https://j-music-cyan.vercel.app/',
+    subtitle: '🎵 Musik favoritmu, satu aplikasi! Yuk, buka J-Music dan nikmati pengalaman musik yang seru!',
+    tag: 'Web Android',
+    logo: 'https://jambijohan0-cpu.github.io/Johan/img/J-Music.png'
+  },  
   {
     title: 'J-Air : Cuaca & Kualitas Udara Dunia',
     href: 'https://johan-air.vercel.app/',
     subtitle: '🌍 Mau tahu 🌤️ cuaca dan kondisi udara di berbagai kota di dunia? Gas cek lewat J-Air!',
     tag: 'Web Android',
     logo: 'https://jambijohan0-cpu.github.io/Johan/img/Johan-Air.jpg'
+  },
+  { title: 'Johan-Fit', 
+   href: 'https://drive.google.com/file/d/12Y-GpanRBH64OfLO6brKwHWEg7hqby1J/view?usp=sharing', 
+   subtitle: 'Aplikasi Jogging Gratis untuk Hitung Jarak, Langkah, Kalori, Kecepatan, Waktu & Pace.', 
+   tag: 'Android APK', 
+   logo: 'https://jambijohan0-cpu.github.io/Johan/img/Johan-Fit.png' 
   },
   {
     title: 'Bongkar-Password Excel',
